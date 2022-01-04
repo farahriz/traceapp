@@ -11,4 +11,9 @@ class SessionsController < ApplicationController
         redirect_to signin_path
       end
     end
+
+    def destory
+        session[:location_id] = nil
+        redirect_to signin_path
+    end
   end
