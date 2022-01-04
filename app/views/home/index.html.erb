@@ -11,6 +11,8 @@
     <br>
 
     <% if logged_in? %>
+        <%= render 'home/checkin_info'%>    
+
         <%= button_to "Logout", sessions_path, method: :delete, class:"btn btn-danger" %>
     <% else %>
         For locations: <br />

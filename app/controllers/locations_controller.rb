@@ -22,7 +22,7 @@ class LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:email, :password, :password_confirmation)
+        params.require(:location).permit(:email, :name, :password, :password_confirmation)
     end
 
 end
