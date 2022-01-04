@@ -13,6 +13,11 @@
     <% if logged_in? %>
         <%= button_to "Logout", sessions_path, method: :delete %>
     <% else %>
-        <%= button_to "Sign In Page", signin_path, method: :get %>
+        For locations: <br />
+        <%= button_to "Got an account? Sign in!", signin_path, method: :get, class:"btn btn-primary"  %>
+        <br>
+
+        <b>For people checking in:</b>
+        <p>Scan the QR code near you, or ask the location you're visiting for the check in URL</p>
     <% end %>
 </body>
