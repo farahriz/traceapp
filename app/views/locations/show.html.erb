@@ -5,6 +5,10 @@
     </head>
     <body>
     <%= render 'home/header' %>
-    
+
+    <h3>Check In Link for <span class="text-primary"><%=current_location.name %></span></h3>
+
+    <p> <%= link_to location_url(current_location), location_url(current_location) %> </p>
+
     </body>
 </html>
