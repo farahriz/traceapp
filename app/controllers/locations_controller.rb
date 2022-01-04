@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+    before_action :authorized, only: [:show]
+
     def new
         @location = Location.new
     end

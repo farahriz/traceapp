@@ -9,15 +9,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Checkin Link</a>
                 </li>
+                <% if logged_in? %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Log out</a>
+                </li>
+                <% else %>
                 <li class="nav-item">
                     <a class="nav-link" href="/signin">Sign In</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/signup">Sign Up</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Log out</a>
-                </li>
+                <% end %>
             </ul>
         </div>
     </div>
