@@ -4,4 +4,10 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'home/about'
+
+  resources :locations, only: [:create, :show]
+  get "/signup", to: "locations#new"
+  get "/signin", to: "sessions#new"
+  post "/sessions", to: "sessions#create"
+  delete "/sessions", to: "sessions#destory"
 end
