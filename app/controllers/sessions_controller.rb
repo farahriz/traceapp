@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       end
     end
 
-    def destory
+    def destroy
         session[:location_id] = nil
         redirect_to signin_path
     end

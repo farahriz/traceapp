@@ -6,12 +6,12 @@
                 <li class="nav-item">
                     <%= link_to "About Us", home_about_path, class:"nav-link"%>
                 </li>
+                <% if logged_in? %>
                 <li class="nav-item">
                     <a class="nav-link" href="/">Checkin Link</a>
                 </li>
-                <% if logged_in? %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Log out</a>
+                    <%= button_to "Logout", sessions_path, method: :delete, class:"btn btn-danger" %>
                 </li>
                 <% else %>
                 <li class="nav-item">
