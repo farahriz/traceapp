@@ -17,7 +17,8 @@ class LocationsController < ApplicationController
 
     def show
         @location = Location.find(params[:id])
-        qrcode = RQRCode::QRCode.new("https://kyan.com")
+        checkin_url = location_checkin_url(@location, 'new')
+        qrcode = RQRCode::QRCode.new(checkin_url)
         @svg = qrcode.as_svg(
             color: "000",
             shape_rendering: "crispEdges",
