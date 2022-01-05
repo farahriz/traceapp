@@ -1,23 +1,46 @@
-# README
+# Trace App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install
 
-Things you may want to cover:
+### Clone the repository
 
-* Ruby version
-blah blah check ruby version and rails version for compatability
+```shell
+git clone git@github.com:farahriz/traceapp.git
+cd traceapp
+```
 
-$bundle install
-to install all required gems. 
+### Check your Ruby version
+```shell
+ruby -v
+```
 
-* Configuration
+This app was created with ruby 3.0.3
 
-* Database creation
+If your don't have an appopriate version of ruby, install the right version using [rbenv](https://github.com/rbenv/rbenv) (it could take quite a while, but don't panic; it just takes some time):
 
-* Database initialization
+```shell
+rbenv install 3.0.3
+```
 
+### Install dependencies
+Using [Bundler](https://github.com/bundler/bunder) and [Yarn](https://github.com/yarnpkg/yarn):
+```shell
+bundle && yarn
+```
+
+Install neccesary gems
+```shell
+bundle install
+```
+
+### Initialize the databsell
+```shell
+rails db:create db:migrate
+```
+
+### Start the server and try it out
+```shell
 $bin/rails server
-to run server.
+```
 
 App should run on localhost:3000
