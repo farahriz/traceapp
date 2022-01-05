@@ -14,11 +14,11 @@
     <%= form_for @location do |f| %>
         <div class="mb-3">
         <%= f.label :email %>
-        <%= f.text_field :email, placeholder: "Email" %>
+        <%= f.text_field :email, placeholder: "Email", :value => @location.email %>
         </div>
         <div class="mb-3">
         <%= f.label :name %>
-        <%= f.text_field :name, placeholder: "Location Name" %>
+        <%= f.text_field :name, placeholder: "Location Name", :value => @location.name %>
         </div>
         <div class="mb-3">
         <%= f.label :password %>
