@@ -6,8 +6,10 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+blah blah check ruby version and rails version for compatability
 
-* System dependencies
+$bundle install
+to install all required gems. 
 
 * Configuration
 
@@ -15,10 +17,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
+$bin/rails server
+to run server.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+App should run on localhost:3000
