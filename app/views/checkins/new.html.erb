@@ -1,0 +1,33 @@
+<html>
+    <!-- CSS only -->
+    <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+    <%= render 'home/header' %>
+
+    <%= form_with(model: @checkin, url:[@location, @checkin]) do |f| %>
+        <div class="row mb-3">
+            <div class="col">
+                <%= f.label :first_name, class:"form-label" %>
+                <%= f.text_field :first_name, placeholder: "First name", class:"form-control" %>
+            </div>
+            <div class="col">
+                <%= f.label :last_name, class:"form-label" %>
+                <%= f.text_field :last_name, placeholder: "Last name", class:"form-control" %>
+            </div>
+        </div>
+        <div class="mb-3">
+            <%= f.label :identification, class:"form-label" %>
+            <%= f.text_field :identification, placeholder: "NRIC/Passport Number", class:"form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= f.label :temperature, class:"form-label" %>
+            <%= f.text_field :temperature, placeholder: "Temperature (degrees C)", class:"form-control" %>
+        </div>
+
+        <%= f.submit "Submit", class:"btn btn-primary", type:"submit" %>
+    <% end %>
+
+    </body>
+</html>

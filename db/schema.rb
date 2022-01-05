@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_093434) do
+ActiveRecord::Schema.define(version: 2022_01_05_064909) do
+
+  create_table "checkins", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.decimal "temperature"
+    t.integer "location_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "identification"
+    t.index ["location_id", "created_at"], name: "index_checkins_on_location_id_and_created_at"
+    t.index ["location_id"], name: "index_checkins_on_location_id"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
@@ -20,4 +32,5 @@ ActiveRecord::Schema.define(version: 2022_01_04_093434) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "checkins", "locations"
 end
