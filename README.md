@@ -1,4 +1,5 @@
 # Trace App
+Simple contact tracing app in Rails.
 
 ## Install
 
