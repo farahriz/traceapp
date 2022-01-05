@@ -24,7 +24,7 @@ rbenv install 3.0.3
 ```
 
 ### Install dependencies
-Using [Bundler](https://github.com/bundler/bunder) and [Yarn](https://github.com/yarnpkg/yarn):
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 ```shell
 bundle && yarn
 ```
