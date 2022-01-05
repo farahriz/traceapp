@@ -34,13 +34,9 @@ class LocationsController < ApplicationController
 
     def update
         location = Location.find(params[:id])
-        pp location
         new_name = params[:location][:name]
-        pp new_name
-        pp "Going to update now"
         location.update(name: new_name)
-        pp "Here's where we test if update ran or not"
-        pp location
+        # TODO: Location updates, but then reverts to old data
 
         redirect_to root_path
     end
