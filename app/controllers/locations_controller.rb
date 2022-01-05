@@ -17,6 +17,14 @@ class LocationsController < ApplicationController
 
     def show
         @location = Location.find(params[:id])
+        qrcode = RQRCode::QRCode.new("https://kyan.com")
+        @svg = qrcode.as_svg(
+            color: "000",
+            shape_rendering: "crispEdges",
+            module_size: 11,
+            standalone: true,
+            use_path: true
+        )
     end
 
     private

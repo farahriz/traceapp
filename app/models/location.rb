@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+    has_many :checkins, dependent: :destroy
     has_secure_password
     validates :email, presence: true, uniqueness: true
     validates :password, presence: true

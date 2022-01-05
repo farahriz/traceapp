@@ -8,7 +8,8 @@
 
     <h3>Check In Link for <span class="text-primary"><%=current_location.name %></span></h3>
 
-    <p> <%= link_to location_url(current_location), location_url(current_location) %> </p>
-
+    <p> <%= link_to location_checkin_url(current_location, 'new'), location_checkin_url(current_location, 'new') %> </p>
+    <p> Scan this QR code to sign in: </p>
+    <%= render inline: @svg %>
     </body>
 </html>
