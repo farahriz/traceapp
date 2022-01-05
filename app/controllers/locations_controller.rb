@@ -29,13 +29,19 @@ class LocationsController < ApplicationController
     end
 
     def edit
-        @location = current_location
+        @location = Location.find(current_location.id)
     end
 
     def update
-        pp params
-        @location = Location.find(current_location.id)
-        @location.update(name: params[:location][:name])
+        location = Location.find(params[:id])
+        pp location
+        new_name = params[:location][:name]
+        pp new_name
+        pp "Going to update now"
+        location.update(name: new_name)
+        pp "Here's where we test if update ran or not"
+        pp location
+
         redirect_to root_path
     end
 
