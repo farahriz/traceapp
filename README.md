@@ -41,7 +41,7 @@ rails db:create db:migrate
 
 ### Start the server and try it out
 ```shell
-$bin/rails server
+bin/rails server
 ```
 
 App should run on localhost:3000
