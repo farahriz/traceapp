@@ -5,22 +5,31 @@
 
 <body>
     <%= render 'home/header' %>
-
-    <% flash.each do |type, msg| %>
-        <div>
-          <%= msg %>
-        </div>
-      <% end %>
     
+    <%= yield %>
+
+    <br>
+
+    <h2>Location Information</h2>
     <%= form_for @location do |f| %>
+        <div class="mb-3">
         <%= f.label :email %>
         <%= f.text_field :email, placeholder: "Email" %>
+        </div>
+        <div class="mb-3">
         <%= f.label :name %>
         <%= f.text_field :name, placeholder: "Location Name" %>
+        </div>
+        <div class="mb-3">
         <%= f.label :password %>
-        <%= f.password_field :password, placeholder: "Password" %>
+        <%= f.password_field :password, placeholder: "New Password" %>
+        </div>
+        <div class="mb-3">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-        <%= f.submit "Create Account" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm New Password" %>
+        </div>
+        <%= f.submit "Update Info", class:"btn btn-primary", type:"submit" %>
+        
     <% end %>
+
 </body>

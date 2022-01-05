@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'home/about'
 
-  resources :locations, only: [:create, :show] do
+  resources :locations, only: [:create, :show, :update] do
     resources :checkins, only: [:new, :create, :show]
   end
 
@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get "/signin", to: "sessions#new"
   post "/sessions", to: "sessions#create"
   delete "/sessions", to: "sessions#destroy"
+  get "/profile", to: "locations#edit", as: 'profile'
+  
 end

@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
             @location.save
             redirect_to @location
         else
-            redirect :new
+            redirect_to signup_path, flash: { error: "Some sign up info was wrong. Did you password match? Are all fields filled in?"}
         end
     end
 
@@ -26,6 +26,17 @@ class LocationsController < ApplicationController
             standalone: true,
             use_path: true
         )
+    end
+
+    def edit
+        @location = current_location
+    end
+
+    def update
+        pp params
+        @location = Location.find(current_location.id)
+        @location.update(name: params[:location][:name])
+        redirect_to root_path
     end
 
     private
